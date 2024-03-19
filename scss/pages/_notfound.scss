@@ -1,0 +1,69 @@
+.notfound {
+
+    // height: calc(100vh - var(--height-header));
+    .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+    }
+
+    h1 {
+        @include text(db, 180px, 160px, var(--blue-light-cl), );
+
+        @include xs {
+            @include text(db, 120px, 120px, var(--blue-light-cl), );
+
+        }
+
+    }
+
+    h2 {
+        margin-top: 12px;
+        margin-bottom: 6px;
+        @include text(db, var(--fs-h2-42), var(--lh-h2), var(--white-cl), );
+
+    }
+
+    p {
+        max-width: 557px;
+        text-align: center;
+        font-family: dr;
+        margin-bottom: 40px;
+
+    }
+
+    &__btn {
+        display: flex;
+        gap: 24px;
+
+        @include xs {
+            display: initial;
+            width: 100%;
+        }
+
+        .blue__btn {
+            @include xs {
+                margin-bottom: 16px;
+            }
+        }
+    }
+
+    &__blur {
+        position: absolute;
+        top: -50%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+
+        // transform: translate(-50% -50%);
+        @include sm {
+            top: 0;
+            left: 0;
+        }
+    }
+
+}

@@ -1,0 +1,91 @@
+.pricing{
+    padding-top: calc(40px + var(--height-header));
+    padding-bottom: 225px;
+    @include sm{
+        padding-bottom: 80px;
+    }
+    .textboxh1{
+        .des{
+            @include xs{
+                max-width: 100%;
+            }
+        }
+    }
+    &__label{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 40px;
+        margin-bottom: 56px;
+        gap: 10px;
+        @include xs{
+            width: 100%;
+            margin-bottom: 48px;
+        }
+        @include xs{
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        &-item{
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        @include sm{
+            gap: 10px;
+        }
+        &:not(:last-child){
+            @include xs{
+                margin-bottom: 28px;
+            }
+        }
+        }
+    }
+    &__list{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 26px;
+        @include sm{
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 16px;
+        }
+        &-item{
+            padding: 48px 30px 42px 32px;
+            background-color: var(--blue-dark-cl);
+            border-radius: 40px;
+            @include sm{
+                width: 100%;
+            }
+            .textbox{
+                margin-bottom: 40px;
+                .heading{
+                    margin: 16px 0;
+                }
+            }
+            .content{
+                margin-bottom: 54px;
+                .title{
+                    text-transform: uppercase;
+                    font-family: db;
+                    margin-bottom: 16px;
+                }
+                ul{
+                    list-style: initial;
+                    margin-left: 16px;
+                    li{
+                        color: var(--white-cl);
+                        margin-bottom: 16px;
+                        font-family: dr;
+                        &::marker{
+                            color: var(--blue-light-cl);
+                        }
+                    }
+                }
+            }
+            .blue__btn{
+                width: 100%;
+            }
+        }
+    }
+}

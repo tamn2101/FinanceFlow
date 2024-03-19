@@ -1,0 +1,143 @@
+:root{
+    --max-width-page: 2560px;
+    --max-width-container-small:calc(787px + calc( var(--gap) * 2));
+    --max-width-container-m:calc(1000px + calc( var(--gap) * 2));
+    // --max-width-container-fluid:1920px;
+    --max-width-container: calc(1198px + calc( var(--gap) * 2));  //1200px tuy thuoc vao ban thiet ke
+
+    --gap: 28px;
+    --gap-mobile:10px;
+
+    // color
+    --main-cl:#010725;
+    --white-cl: #FFfffF;
+    --blue-dark-cl:#010D50;
+    --blue-light-cl:#0328EE;
+    --red-cl:#EE0303;
+    --blue-hover:#031FB4;
+    // fonts size
+    --fs-h1-66:6.6rem;
+    --lh-h1:8rem;
+    --lp-h1:-1px;
+
+    --fs-h2-42: 4.2rem;
+    --lh-h2: 5.5rem;
+    --lp-h2: 0px;
+    
+    --label-18px: 1.8rem;
+    --lh-label:2.6rem;
+    --lp-label:0.9px;
+
+    --text-btn-16: 1.6rem;
+    --lh-text-btn: 1.6rem;
+    --lh-btn:1.6px;
+
+    --body-text-18: 1.8rem;
+    --lh-body-text-32: 3.2rem;
+    --lp-body-text: 0px;
+
+    --body-text-16: 1.6rem;
+    --lh-body-text-26: 2.6rem;
+    --lp-body-text: 0px;
+
+    --text-menu-14:1.4rem;
+    --lh-text-menu-16:1.6rem;
+    --lp-text-menu:1.4px;
+
+    --text-tab-14:1.4rem;
+    --lh-text-tab:1.8rem;
+    --lp-text-tab:0.7px;
+
+    // mobile
+    --fs-h1-mobile-38:3.8rem;
+    --lh-h1-mobile: 4.6rem;
+    --lp-h1:-1px;
+
+    --fs-h2-mobile-28: 2.8rem;
+    --lh-h2-mobile: 3.6rem;
+    --lp-h2-mobile:0px;
+
+
+    --label-mobile-14: 1.4rem;
+    --lh-label-moble:1.8rem;
+    --lp-label-mobilee:0.7px;
+
+    --text-btn-mobile: 1.6rem;
+    --lh-text-btn-mobile: 1.6rem;
+    --lh-btn-mobile:1.6px;
+
+    --body-text-mobile:1.6rem;
+    --lh-body-mobile:2.6rem;
+    --lp-0px:0px;
+
+    --text-menu-mobile-26:2.6rem;
+    --lh-text-menu-mobile:100%;
+    --lp-text-menu:1.4px;
+
+    // fonts
+    --font-body:dr;
+    --fonts-body-bold:db;
+
+    // general
+    --height-header: 86px;
+    --height-btn-70: 70px;
+    --height-btn-56: 56px;
+    --height-btn-mobile: 70px;
+
+    // timing transition
+    --duration:0.4s;
+    // gia toc
+    --cubic: cubic-bezier(0.59, 0.29, 0.15,0.93);
+
+    // responsive
+    @include lg {
+        --container-max-width: 1140px;
+    }
+    @include sm {
+        --container-max-width: 960px; //hoac max-width: 100% tuy yeu cau
+        // --pd-section:90px 0;
+    }
+    @include xs {
+        --container-max-width: 720px; //hoac max-width: 100% tuy yeu cau
+        --fs-h1-66:3.8rem;
+        --lh-h1:4.6rem;
+        --lp-h1:-1px;
+    
+        --fs-h2-42: 2.8rem;
+        --lh-h2: 3.6rem;
+        --lp-h1: 0px;
+        
+        --label-18px: 1.4rem;
+        --lh-label:1.8rem;
+        --lp-label:0.7px;
+    
+        --text-btn-16: 1.6rem;
+        --lh-text-btn: 1.6rem;
+        --lp-btn:1.6px;
+    
+        --body-text-18: 1.6rem;
+        --lh-body-text-32: 2.6rem;
+        --lp-body-text: 0px;
+    
+        --body-text-16: 1.6rem;
+        --lh-body-text-26: 2.6rem;
+        --lp-body-text: 0px;
+    
+        --text-menu-14:3.2rem;
+        --lh-text-menu-16:100%;
+        --lp-text-menu:1.4px;
+    
+        --text-tab-14:1.4rem;
+        --lh-text-tab:1.8rem;
+        --lp-text-tab:0.7px;
+
+        --height-header: 73px;
+        --height-button: 70px;
+
+        gap: 15px;
+    }
+    @include xxs {
+        --container-max-width: 100%
+    }
+
+}

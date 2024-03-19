@@ -1,0 +1,62 @@
+// thuong viet menu tren mobile
+.mobilenav {
+    display: none;
+    @include md{
+        padding: 0 45px;
+        display: initial;
+        width: 100%;
+        position: fixed;
+        height: 100vh;
+        // height: calc(100vh - var(--height-header));
+        left: 0;
+        // top: var(--height-header);
+        background-color: var(--main-cl);
+        z-index: 200;
+        @include visible (2);
+        @include transition (--duration);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        ul{
+            text-align: center;
+            li{
+                margin-bottom: 30px;
+                a{
+                    @include text(db,var(--text-menu-mobile-26), var(--lh-text-menu-mobile), var(--white-cl),uppercase);
+                    letter-spacing: var(--lp-text-menu);
+                    @include transition (var(--duration));
+                    width: fit-content;
+                    position: relative;
+                    &:hover{
+                    &::after{
+                        content: "";
+                        width: 100%;
+                        bottom: 0;
+                        background-color: var(--white-cl);
+                        position: absolute;
+                        height: 1px;
+                        display: inline-block;
+                        left: 0;
+                    }
+                }
+                }
+               
+            }
+        }
+        .blue__btn{
+            width: 100%;
+        }
+        &.active{
+            @include visible (1);
+        }
+        &__blur{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+}

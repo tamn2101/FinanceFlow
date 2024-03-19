@@ -1,0 +1,237 @@
+.contact {
+    padding-top: calc(80px + var(--height-header));
+    padding-bottom: 65px;
+
+    @include xs {
+        padding-bottom: 80px;
+    }
+
+    .textboxh1 {
+        text-align: left;
+        margin-left: 0;
+    }
+
+    &__info {
+        display: grid;
+        grid-template-columns: 1fr 33.333%;
+
+        @include sm {
+            grid-template-columns: 1fr;
+        }
+
+        &-form {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            form {
+                margin-right: 63px;
+                gap: 25px;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+
+                @include sm {
+                    display: initial;
+                    width: 100%;
+                }
+
+                .forminput {
+                    &:not(:nth-child(5)) {
+
+                        .text {
+                            text-transform: uppercase;
+                            font-family: db;
+                        }
+
+                        input {
+                            box-sizing: border-box;
+                            width: 100%;
+                            background-color: var(--blue-dark-cl);
+                            padding: 20px 20px 20px 20px;
+                            border-radius: 100px;
+                            border: 1px solid var(--bg, #010725);
+                            // border: 1px solid #010725;
+                            margin-top: 3px;
+
+                            @include text(dr, var(--label-18px), var(--lh-label), var(--white-cl), );
+
+                            &::placeholder {
+                                @include text(dr, var(--label-18px), var(--lh-label), var(--white-cl), );
+                            }
+
+                            @include xs {
+                                width: 100%;
+                            }
+
+                        }
+
+                        input[type=text]:focus {
+                            outline: none;
+                            border: 1px solid var(--blue, #0328EE);
+                        }
+                        input:invalid {
+                            // border: 1px solid #EE0303;
+                            outline: 1px solid #EE0303;
+                            // outline: 2px solid red;
+                          }
+                          input:placeholder-shown {
+                            border: 1px solid var(--bg, #010725);
+                            outline: none;
+                          }
+                    }
+
+                    &:nth-child(5) {
+                        grid-column: 1/3;
+                        width: 100%;
+                        margin-bottom: 14px;
+
+                        @include sm {
+                            grid-column: initial;
+                            width: 100%;
+                            margin-bottom: 32px;
+                        }
+
+                        textarea {
+                            width: 100%;
+                            height: 162px;
+                            border-radius: 14px;
+                            border: 1px solid var(--bg, #010725);
+                            margin-top: 12px;
+                            box-sizing: border-box;
+                            padding: 20px 25px;
+                            border: 1px solid var(--blue, #0328EE);
+
+                            background-color: var(--blue-dark-cl);
+                            @include text(dr, var(--label-18px), var(--lh-label), var(--white-cl), );
+
+                            &::placeholder {
+                                @include text(dr, var(--label-18px), var(--lh-label), var(--white-cl), );
+                            }
+                        }
+                        textarea:focus {
+                            outline: none;
+                            border: 1px solid var(--blue, #0328EE);
+                        }
+                        textarea:invalid {
+                            border: 1px solid #EE0303;
+                          }
+                          textarea:placeholder-shown {
+                            border: 1px solid var(--bg, #010725);
+                          }
+                    }
+
+                }
+            }
+
+            .blue__btn {
+                margin-bottom: 40px;
+                border: none;
+            }
+        }
+
+        &-mailto {
+            .heading {
+                @include text(db, 22px, 30px, var(--white-cl), );
+            }
+
+            .des {
+                font-family: dr;
+                margin-top: 12px;
+                margin-bottom: 32px;
+            }
+
+            .email {
+                margin-bottom: 24px;
+
+                a {
+                    gap: 15px;
+                    display: flex;
+                    align-items: center;
+                    margin-right: 15px;
+
+                    p {
+                        @include text(dm, var(--body-text-18), 29px, var(--white-cl), );
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.accordion {
+    padding-bottom: 120px;
+
+    @include xs {
+        padding-bottom: 106px;
+    }
+
+    &__list {
+        max-width: 872px;
+        margin: auto;
+
+        @include xs {
+            width: 100%;
+        }
+
+        &-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+            padding-bottom: 28px;
+            padding-top: 28px;
+
+            .item {
+                background-color: var(--main-cl);
+                cursor: pointer;
+                width: 100%;
+                text-align: left;
+                outline: none;
+                padding: 0px 8px;
+                @include text(db, var(--fs-h2-mobile-28), 29px, var(--white-cl), );
+                letter-spacing: 0.28px;
+                border: none;
+                position: relative;
+
+                @include xs {
+                    font-size: 18px;
+                }
+
+                &::before,
+                &:after {
+                    content: '';
+                    /* Unicode character for "plus" sign (+) */
+                    width: 27px;
+                    height: 1px;
+                    background-color: var(--white-cl);
+                    display: inline-block;
+                    position: absolute;
+                    right: 0;
+                    bottom: 50%;
+                    padding-right: 8px;
+                    @include transition (var(--duration));
+
+                }
+
+                &::after {
+                    transform: rotate(90deg) translate(0px, 0px);
+                }
+            }
+
+            .active::after {
+                transform: rotate(0deg) translate(0px, 0px);
+            }
+
+            .panel {
+                // display: none;
+                overflow: hidden;
+                transition: max-height 0.2s ease-out;
+                padding: 0 18px;
+                max-height: 0;
+                font-family: dr;
+                // border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+                border-top: 0;
+                border-left: 0;
+                border-right: 0;
+            }
+        }
+
+    }
+}

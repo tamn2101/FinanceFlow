@@ -1,0 +1,187 @@
+.header {
+    height: var(--height-header);
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
+    left: 0;
+    @include md{
+        background-color: var(--main-cl);
+    }
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 2;
+    }
+
+    &__left {
+        display: flex;
+        align-items: center;
+        .logomain{
+            padding-right: 64px;
+            @include xs{
+                display: none;
+            }
+        }
+        .logomb{
+            display: none;
+            // @include visible(0);
+            @include xs{
+                position: absolute;
+                transform: translateY(-70%);
+                display: initial;
+                padding-top: 24px;
+                @include visible (1);
+                margin: auto;
+            }
+        }
+        &-nav {
+            @include sm{
+                display: none;
+            }
+            ul {
+                display: flex;
+
+                a {
+                    @include text (dm, var(--text-menu-14), var(--lh-text-menu-16), var(--white-cl), uppercase);
+                    line-height: var(--lp-text-menu);
+                    padding: 10px 13px;
+                    position: relative;
+                    width: fit-content;
+                    &.active ,
+                    &:hover{
+                        &::after {
+                            content: "";
+
+                            width: calc(100% - 27px);
+                            height: 1px;
+                            background-color: var(--white-cl);
+                            display: inline-block;
+                            position: absolute;
+                            bottom: 10px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            transform-origin: left;
+                        }
+                    }
+                }
+            }
+
+        }
+        
+    }
+    &__right{
+        
+    .blue__btn{
+        height: 56px;
+        @include sm{
+            display: none;
+        }
+    }
+    &-btn {
+        @include sm{
+        background-color: var(--blue-light-cl);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+            position: relative;
+            cursor: pointer;
+            &::before,
+            &::after,
+            span {
+                content: "";
+                width: 25px;
+                height: 2px;
+                display: block;
+                position: absolute;
+                @include transition (var(--duration));
+                background-color: var(--white-cl);
+            }
+
+            &::before {
+                margin-top: 20px;
+                transform: rotate(0deg) translate(0px, 0px);
+            }
+
+            &::after {
+                margin-bottom:18px;
+                transform: rotate(0deg) translate(0px, 0px);
+            }
+
+            &.active {
+                &::before {
+                    transform: rotate(45deg) translate(-7px,-7px);
+                    @include transition(--duration)
+                }
+
+                span {
+                    opacity: 0;
+                    @include transition(--duration)
+                }
+
+                &::after {
+                    transform: rotate(-45deg) translate(-6px,6px);
+                    @include transition (--duration)
+                }
+            }
+        }
+    }
+    }
+}
+
+
+// PROGRESSBAR
+.progressBar{
+    width: 20%;
+    height: 4px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--white-cl);
+    z-index: 500;
+}
+
+
+// LOADING
+.loading{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 2000;
+    background-color: var(--main-cl);
+    @include mid(true);
+    flex-direction: column;
+    opacity: 1;
+    visibility: visible;
+    &__inner{
+        width: 160px;
+        height: 4px;
+        border-radius: 100px;
+        background-color: var(--white-cl);
+        position: relative;
+        overflow: hidden;
+        &-progress{
+            width: 0%;
+            height: 100%;
+            position: absolute;
+            background-color: var(--blue-light-cl);
+        }
+    }
+    &__percent{
+        padding-top: 14px;
+        text-align: center;
+        @include text (db, 16px, normal, var(--white-cl), uppercase)
+
+    }
+}
+.loading.--is-loaded{
+    opacity: 0;
+    visibility: hidden;
+    @include transition (var(--duration));
+}
